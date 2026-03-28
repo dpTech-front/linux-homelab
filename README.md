@@ -1,22 +1,13 @@
-# Linux Home Lab Portfolio
+# Linux Home Lab
 
-Welcome to my Linux home lab repository! This repo documents my journey exploring Linux systems, tiling window managers, shell environments, Vim/Neovim configurations, server setups, and embedded robotics projects.
-
-## Overview
-
-This repository is structured for clarity and scalability. Each main category has its own folder, and every folder contains a README explaining its purpose, usage, and workflow.
+This repository documents my Linux home lab journey, focusing on configuration, automation, and experimentation.
 
 ## Current Contents
 
-### Shell Environments
-- **shells/zsh/** → Zsh shell configuration and aliases (documented separately)
+- **shells/** → Shell environments (Zsh, Bash, etc.)  
+- **vim/** → Vim/Neovim setups  
+- **tiling-wms/** → bspwm, Echinus, dwm  
+- **server-setup/** → Server scripts and automation  
+- **embedded-robotics/** → Arduino, EV3, and robotics projects  
 
-### Planned Additions
-- Vim/Neovim configurations
-- Tiling window managers (bspwm, Echinus, dwm)
-- Server setup and automation scripts
-- Embedded robotics projects (Arduino, EV3)
-
----
-
-> Each folder is self-contained and documented, making it easy to reproduce setups step by step.
+> Each folder is self-contained and documented for step-by-step reproducibility.
