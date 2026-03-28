@@ -3,11 +3,12 @@
 # Only start graphical session on tty1
 if [ "$(tty)" = "/dev/tty1" ]; then
     if [ "$SESSION_TYPE" = "x11" ]; then
-        if ! pgrep -x Xorg >/dev/null 2>&1; then
+        # Start X only if chosen WM isn't running
+        if ! pgrep -x "$XINIT_WM" >/dev/null 2>&1; then
             startx "$HOME/.config/X11/xinitrc" -- "$XINIT_WM"
         fi
     elif [ "$SESSION_TYPE" = "wayland" ]; then
-        # Wayland compositors generally start directly from login manager or tty
-        echo "Wayland session detected; start your compositor manually or via login manager"
+        # Placeholder: Wayland startup for future
+        echo "Wayland session placeholder — no compositor started yet"
     fi
 fi
