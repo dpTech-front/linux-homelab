@@ -1,10 +1,14 @@
-# Linux Home Lab
+# Linux Home Lab Portfolio
 
-This repository contains my hands-on Linux projects and experiments, focusing on server setup, system automation, Vim/Neovim workflows, and tiling window managers.
+This repository documents my Linux home lab journey, starting with my shell environment.
 
-## Projects
-- Server setup & configuration
-- SSH hardening & firewall setup
-- User management & automation scripts
-- Vim/Neovim workflow customization
-- Tiling WM configs (bspwm, dwm, Echinus)
+## Contents
+
+### Shell Environments
+- **shells/zsh** → My Zsh configuration files, including .zshrc, .zprofile, and .zshenv
+
+---
+
+## Notes
+- Each folder contains configs and a README explaining installation, usage, and workflow.
+- This repo is designed for step-by-step reproducibility and expansion.
