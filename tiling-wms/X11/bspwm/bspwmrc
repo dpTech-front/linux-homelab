@@ -1,5 +1,6 @@
 #!/bin/sh
 # ~/.config/bspwm/bspwmrc
+# bspwm configuration (appearance, rules, gaps)
 
 # ===== Monitor setup =====
 source ~/.config/bspwm/monitor_setup.sh
