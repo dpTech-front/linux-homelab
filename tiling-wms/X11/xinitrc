@@ -1,0 +1,5 @@
+#!/bin/sh
+# ~/.config/X11/xinitrc
+
+# Simply exec the chosen WM
+exec "$XINIT_WM"
