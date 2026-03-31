@@ -1,0 +1,37 @@
+# ===========================
+# Starship Prompt Configuration
+# Minimal, readable, and informative shell prompt
+# ===========================
+
+# Do not add a blank line before the prompt
+add_newline = false
+
+# ---------------------------
+# Prompt Character
+# ---------------------------
+[character]
+success_symbol = "[➜](bold green)"   # Symbol for successful command
+error_symbol = "[✗](bold red)"       # Symbol for failed command
+
+# ---------------------------
+# Username
+# ---------------------------
+[username]
+show_always = true                   # Always show username
+format = "[$user]($style)[@]($style)"  # Format: user@
+
+# ---------------------------
+# Hostname
+# ---------------------------
+[hostname]
+ssh_only = false                     # Show hostname even if not SSH
+style = "bold yellow"
+format = "[$hostname]($style) "      # Format: hostname
+
+# ---------------------------
+# Directory
+# ---------------------------
+[directory]
+truncation_length = 4                # Show last 4 directories
+truncation_symbol = "…/"             # Symbol for truncated path
+style = "italic cyan"                # Directory color/style
