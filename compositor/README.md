@@ -1,4 +1,4 @@
-*Picom compositor configuration*
+# Picom compositor
 
 ## Config
 
