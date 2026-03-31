@@ -1,0 +1,136 @@
+#
+# ===========================
+# sxhkd Configuration
+# Hotkeys for bspwm environment
+# ===========================
+#
+
+# ---------------------------
+# WM-independent hotkeys
+# ---------------------------
+
+# Terminal emulators
+super + Return
+    st
+
+super + x
+    xterm
+
+# Browser
+super + f
+    firefox
+
+# Reload sxhkd config
+super + Escape
+    pkill -USR1 -x sxhkd
+
+
+# ---------------------------
+# bspwm control
+# ---------------------------
+
+# Quit / Restart bspwm
+super + alt + {q,r}
+    bspc {quit,wm -r}
+
+# Close / Kill window
+super + {_,shift + }e
+    bspc node -{c,k}
+
+# Toggle layout (tiled ↔ monocle)
+super + m
+    bspc desktop -l next
+
+# Send newest marked node to newest preselected node
+super + y
+    bspc node newest.marked.local -n newest.!automatic.local
+
+# Swap current node with biggest window
+super + g
+    bspc node -s biggest.window
+
+
+# ---------------------------
+# Window state / flags
+# ---------------------------
+
+# Change window state
+super + {t,shift + u,i,o}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Toggle node flags
+super + ctrl + {m,x,y,z}
+    bspc node -g {marked,locked,sticky,private}
+
+
+# ---------------------------
+# Focus / Swap
+# ---------------------------
+
+# Focus or swap in direction (vim-style)
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+
+# Focus relative nodes
+super + {p,b,comma,period}
+    bspc node -f @{parent,brother,first,second}
+
+# Cycle windows (next / previous)
+super + {_,shift + }c
+    bspc node -f {next,prev}.local.!hidden.window
+
+# Switch desktops (current monitor)
+super + bracket{left,right}
+    bspc desktop -f {prev,next}.local
+
+# Focus last node / desktop
+super + {grave,Tab}
+    bspc {node,desktop} -f last
+
+# Focus older / newer node (history)
+super + {o,i}
+    bspc wm -h off; \
+    bspc node {older,newer} -f; \
+    bspc wm -h on
+
+# Focus or send to desktop (1–10)
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
+
+# ---------------------------
+# Preselection (window placement)
+# ---------------------------
+
+# Directional preselection
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# Set split ratio
+super + ctrl + {1-9}
+    bspc node -o 0.{1-9}
+
+# Cancel preselection (node)
+super + ctrl + space
+    bspc node -p cancel
+
+# Cancel preselection (desktop)
+super + ctrl + shift + space
+    bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+
+# ---------------------------
+# Move / Resize
+# ---------------------------
+
+# Expand window
+super + alt + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Contract window
+super + alt + shift + {h,j,k,l}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Move floating window
+super + {Left,Down,Up,Right}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
