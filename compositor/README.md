@@ -1,13 +1,10 @@
-# Picom / Compositor Configuration
-
-This folder contains the **Picom compositor configuration** used in my Linux home lab.
+**Picom compositor configuration**
 
 ---
 
-## Features
+## Config
 
 - **Shadows**: Enabled with optional exclusion rules for docks, desktops, and notifications  
-- **Fading**: Disabled (can be enabled by uncommenting fade settings)  
 - **Transparency / Opacity**:  
   - Inactive windows at 0.8 opacity  
   - Frame opacity 0.7  
